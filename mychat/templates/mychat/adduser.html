@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>ユーザ登録結果画面</title>
+</head>
+<body>
+  <div>
+    <h1>ユーザ登録結果画面</h1>
+  </div>
+
+  <!-- 入力にエラーがあればここにメッセージが返される -->
+  {% if error_message is not None %}
+  <ul>
+  {% for message in error_message %}
+  <li style="color:red">{{message}}</li>
+  {% endfor %}
+  </ul>
+  {% endif %}
+
+  {% if result_message is not None %}
+  <ul>
+  {% for message in result_message %}
+  <li style="color:black">{{message}}</li>
+  {% endfor %}
+  </ul>
+  {% endif %}
+
+  <div>
+    <p><a href="{% url 'mychat:main' %}">戻る</a></p>
+  </div>
+</body>
+</html>

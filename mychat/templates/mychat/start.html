@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>ログイン画面</title>
+  <link rel="stylesheet" href="{% static 'css/start.css' %}">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js "></script>
+</head>
+<body>
+  <div class="midashi">
+    <h1>ログイン画面</h1>
+  </div>
+
+  <form method="POST" action="{% url 'mychat:main' %}">
+    {% csrf_token %}
+    <p>ユーザ名<input type="text" name="name" size="15"></p>
+    <p>パスワード<input type="password" name="password" size="15"></p>
+    <input type="hidden" name="login" value="on">
+    <input type="submit" value="ログイン">
+  </form>
+
+  <!-- 入力にエラーがあればここにメッセージが返される -->
+  {% if error_message is not None %}
+  <ul>
+  {% for message in error_message %}
+  <li style="color:red">{{message}}</li>
+  {% endfor %}
+  </ul>
+  {% endif %}
+
+  {% if result_message is not None %}
+  <ul>
+  {% for message in result_message %}
+  <li style="color:black">{{message}}</li>
+  {% endfor %}
+  </ul>
+  {% endif %}
+
+  <div class="link">
+    <p><a href="{% url 'mychat:createuser' %}">新規ユーザ登録</a></p>
+  </div>
+
+
+  <div>
+    <h2>チャレンジ課題</h2>
+  </div>
+  <p><a href="{% url 'mychat:deleteroom' %}">ルーム削除</a></p>
+  <p>※現段階で一度にひとつのルームしか削除できない</p>
+
+  <p><a href="{% url 'mychat:deleteuser' %}">ユーザ削除</a></p>
+  <p>※現段階で一度にひとつのユーザしか削除できない</p>
+  <p>※ログイン中のユーザでも削除できる</p>
+
+</body>
+</html>

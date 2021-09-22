@@ -1,0 +1,98 @@
+/* * {
+  margin: 0 auto;
+} */
+
+body {
+  width: 50%;
+  /* background-color: pink; */
+}
+
+h1 {
+  /* color: purple; */
+  /* background-color: azure; */
+}
+
+.link {
+  /* margin-left: 10%; */
+  /* padding: 10px; */
+  /* margin: 0; */
+  /* float: left; */
+  /* background-color: aquamarine; */
+}
+
+/* input {
+  border-radius: 5px;
+  background-color: greenyellow;
+  margin-right: 10%;
+  left: 50%;
+} */
+
+.login-form {
+  /* border: 1px solid #ccc; */
+  padding: 10px;
+  font-size: 13px;
+  font-family: sans-serif;
+}
+
+.login-form .item {
+  display: block;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.item.no-label {
+  padding: 5px 0 5px 220px;
+}
+
+.link {
+
+  padding: 5px 0 5px 15fpx;
+}
+
+.login-form .item .label {
+  float: left;
+  padding: 5px;
+  margin: 0;
+}
+
+.login-form .item input[type=text],
+.login-form .item input[type=password] {
+  display: block;
+  margin-left: 80px;
+  width: 200px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  font-size: 13px;
+  border-radius: 5px;
+  border: 1px solid #333;
+}
+
+.login-form .item ::placeholder {
+  color: #ccc;
+}
+
+/* input[type=submit] { */
+  button {
+  /* margin-left: 80px; */
+  border: none;
+  outline: none;
+  display: block;
+  line-height: 30px;
+  width: 60px;
+  /* text-align: center; */
+
+  font-size: 13px;
+  /* color: #fff; */
+  /* background-color: #696;
+  border-bottom: 4px solid #464; */
+  cursor:pointer;
+
+  box-sizing: content-box;
+  /* transition:0.3s ease all; */
+}
+
+/* button:hover{
+  border-bottom-width:0;
+  transform:translateY(4px)
+} */

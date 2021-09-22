@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>ルーム削除結果画面</title>
+</head>
+<body>
+  <div>
+    <h1>ルーム削除結果画面</h1>
+  </div>
+
+  {% if target is not None %}
+  {% comment %} {% for rooms in target %}
+  <p>ルーム：{{rooms}}</p>
+  {% endfor %} {% endcomment %}
+  <p>ルーム{{target}}</p>
+  {% endif %}
+
+  <p>削除しました</p>
+
+  <p><a href="{% url 'mychat:main' %}">戻る</a></p>
+</body>
+</html>

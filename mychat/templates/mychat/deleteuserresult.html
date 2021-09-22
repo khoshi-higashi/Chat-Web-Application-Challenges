@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>ユーザ削除結果画面</title>
+</head>
+<body>
+  <div>
+    <h1>ユーザ削除結果画面</h1>
+  </div>
+
+  {% if target is not None %}
+  {% comment %} {% for users in target %} {% endcomment %}
+  {% comment %} <p>ユーザ：{{users.name}}</p> {% endcomment %}
+  <p>ユーザ：{{target}}</p>
+  {% comment %} {% endfor %} {% endcomment %}
+  {% endif %}
+
+  <p>削除しました</p>
+  <p><a href="{% url 'mychat:main' %}">戻る</a></p>
+</body>
+</html>

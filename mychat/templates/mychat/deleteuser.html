@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>ルーム削除画面</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+  <script>
+    let user_name = $.cookie("USER")||"None";
+  </script>
+</head>
+<body>
+  <div>
+    <h1>ルーム削除画面</h1>
+  </div>
+
+  <form action="{% url 'mychat:deleteuserresult' %}" method="POST">
+    {% csrf_token %}
+
+    {% if userlist is not None %}
+    {% for users in userlist %}
+    {% if users.name is not user_name %}
+    <p><label><input type="radio" name="userid" value="{{users.id}}">ユーザ:{{users.name}}</label></p>
+    {% comment %} <p><label><input type="checkbox" name="userid" value="{{users.id}}">ユーザ:{{users.name}}</label></p> {% endcomment %}
+    {% endif %}
+    {% endfor %}
+    {% endif %}
+    <input type="submit" value="削除する">
+  </form>
+
+  <p>※現段階で一度にひとつのユーザしか削除できない</p>
+
+  <p><a href="{% url 'mychat:main' %}">戻る</a></p>
+</body>
+</html>
